@@ -1,13 +1,11 @@
-import ComponentA from './components/ComponentA';
-import './App.css';
 
+import './App.css';
+import ComponentA from './components/ComponentA';
 function App() {
-   const firstName = 'Muhammadrasul';
-   const lastName = 'Nurmukhamedov';
   return (
-    <div className="App">
-      <ComponentA ism={firstName} lastName = {lastName}/>
-    </div>
+    <>
+    <ComponentA/>
+    </>
   );
 }
 

@@ -3,34 +3,35 @@ import { useState } from "react";
 import './ComponentA.scss';
 
 const ComponentA  = (props) => {
-    const [count, setCount] = useState(5);
-    const [color, setColor] = useState(false);
-     
-    const handleCount = () => {
-        setCount(count + 5)
-    }
-
-    const handleCountMinus = () => {
-        setCount(count -1)
-    }
-    const handleChange = () => {
-        setColor(!color)
-    }
-
-    console.log(props);
-       return (
-        <div className={color ? 'componentA-dark active' : 'componentA-dark'}>
-            <span>My counter</span>
-            <h2>
-                {count}
-            </h2>
-            <button onClick={handleCount}>Click</button>
-            <button onClick={handleCountMinus}>Minus</button>
-            <button onClick={handleChange}>Change color</button>
-            <ComponentB lastName = {props.lastName}/>
-        </div> 
+    const [state, setState] = useState(true);
+    const updateState = () => {
+        setState(!state);
+      };
+      console.log(state)
+   return (
+        <>
+       
+         <nav>
+        <div className="container">
+          <div className="navbar">
+            <h2 className="logo">WWW</h2> 
+            <div onClick={updateState} className={state?'hamburger':'hamburger active'}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
+            <ul className={state?'navbar__menu active1':' active2'}>
+              <li className="navbar__menu-item"><a className="navbar__menu-link" href="#">Home</a></li>
+              <li className="navbar__menu-item"><a className="navbar__menu-link" href="#">About</a></li>
+              <li className="navbar__menu-item"><a className="navbar__menu-link" href="#">Contact</a></li>
+            </ul>
+          </div>       
+        </div>
+    </nav>
+        </>
+    )
         
-       )
+       
 }
 
 export default ComponentA;
