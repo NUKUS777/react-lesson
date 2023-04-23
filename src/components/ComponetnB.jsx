@@ -1,11 +1,15 @@
-const ComponentB = (props) => {
-    console.log(props);
+import './ComponentB.scss'
+
+const ComponentB = () => {
     return (
         <div>
-           <p>B</p>
-           {
-            props.lastName
-           }
+           <div className="container">
+            <div className="box">
+                <div className="minBox">
+
+                </div>
+            </div>
+           </div>
         </div>
     )
 }
